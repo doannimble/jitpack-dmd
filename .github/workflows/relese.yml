@@ -27,6 +27,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
           tag_name: '204'
-          release_name: ${{APOD_API_KEY }}
+          release_name: ${{ secrets.APOD_API_KEY }}
           draft: false
           prerelease: false
