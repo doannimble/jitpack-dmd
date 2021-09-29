@@ -15,6 +15,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
+      - name: Read branch.properties
+        id: version
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./local.properties
+        
       - name: Assign release version from version.properties to Env variable
         run: |
           cat ./local.properties >> $GITHUB_ENV
