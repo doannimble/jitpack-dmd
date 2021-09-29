@@ -28,6 +28,6 @@ jobs:
           APOD_API_KEY: ${{ secrets.APOD_API_KEY }}
         with:
           tag_name: APOD_API_KEY
-          release_name: 'Release 0.0.1'
+          release_name: APOD_API_KEY
           draft: false
           prerelease: false
