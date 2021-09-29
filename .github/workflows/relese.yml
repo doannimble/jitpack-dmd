@@ -25,9 +25,8 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          APOD_API_KEY: ${{ secrets.APOD_API_KEY }}
         with:
-          tag_name: '203'
+          tag_name: '204'
           release_name: ${{APOD_API_KEY }}
           draft: false
           prerelease: false
