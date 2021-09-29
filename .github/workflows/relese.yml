@@ -21,9 +21,6 @@ jobs:
         with:
           path: ./local.properties
         
-      - name: Assign release version from version.properties to Env variable
-        run: |
-           echo "${{ steps.version.outputs.content }}" >> $GITHUB_ENV  
         
 
       - name: Create Release
@@ -33,6 +30,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
           tag_name: "300"
-          release_name: $GITHUB_ENV
+          release_name: ${{ steps.version.outputs.content }}
           draft: false
           prerelease: false
