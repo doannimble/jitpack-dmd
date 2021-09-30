@@ -21,11 +21,11 @@ jobs:
         with:
           path: ./local.properties
         
-      - uses: jungwinter/split@v2
+      - uses: rishabhgupta/split-by@v1
         id: split
         with:
-          msg: '/release=example=v1.0.0'
-          separator: '='
+          string: 'feat=branch-name'
+          split-by: '='
 
       - name: Create Release
         id: create_release
@@ -33,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: "306"
-          release_name: "Release ${{ steps.split.outputs._1 }}"
+          tag_name: "308"
+          release_name: "Release ${{ steps.split.outputs._1}}"
           draft: false
           prerelease: false
