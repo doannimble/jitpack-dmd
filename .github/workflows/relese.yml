@@ -19,7 +19,7 @@ jobs:
         id: version
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./version.properties
+          path: ./test.abc
         
       - uses: rishabhgupta/split-by@v1
         id: split
