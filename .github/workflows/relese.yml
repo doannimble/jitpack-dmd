@@ -19,7 +19,7 @@ jobs:
         id: version
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./local.properties
+          path: ./version.properties
         
       - uses: jungwinter/split@v2
         id: split
