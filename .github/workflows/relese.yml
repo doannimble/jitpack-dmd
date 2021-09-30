@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Read branch.properties
+      - name: Read version.properties
         id: version
         uses: juliangruber/read-file-action@v1
         with:
