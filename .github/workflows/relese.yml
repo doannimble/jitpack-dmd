@@ -19,7 +19,7 @@ jobs:
         id: version
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./local.properties
+          path: ./version.properties
         
       - uses: rishabhgupta/split-by@v1
         id: split
@@ -33,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: "311"
+          tag_name: "312"
           release_name: "Release ${{ steps.split.outputs._1}}"
           draft: false
           prerelease: false
