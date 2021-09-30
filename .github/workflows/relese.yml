@@ -24,8 +24,7 @@ jobs:
       - uses: jungwinter/split@v2
         id: split
         with:
-          msg: 'version=0.0.3'
-          separator: '='
+          msg: '/release split v1.0.0'
 
       - name: Create Release
         id: create_release
