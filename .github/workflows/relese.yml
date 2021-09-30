@@ -24,7 +24,7 @@ jobs:
       - uses: rishabhgupta/split-by@v1
         id: split
         with:
-          string: "${{ steps.package.outputs.content }}"
+          string: "${{ steps.version.outputs.content }}"
           split-by: '='
 
       - name: Create Release
@@ -33,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: "310"
+          tag_name: "311"
           release_name: "Release ${{ steps.split.outputs._1}}"
           draft: false
           prerelease: false
