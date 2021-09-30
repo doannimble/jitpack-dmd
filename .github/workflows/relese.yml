@@ -24,7 +24,8 @@ jobs:
       - uses: jungwinter/split@v2
         id: split
         with:
-          msg: '/release split v1.0.0'
+          msg: '/release=example=v1.0.0'
+          separator: '='
 
       - name: Create Release
         id: create_release
@@ -32,7 +33,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: "305"
+          tag_name: "306"
           release_name: "Release ${{ steps.split.outputs._1 }}"
           draft: false
           prerelease: false
