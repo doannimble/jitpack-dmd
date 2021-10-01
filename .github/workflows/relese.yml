@@ -15,17 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-      - name: Read version.properties
-        id: version
-        uses: juliangruber/read-file-action@v1
+      - uses: madhead/read-java-properties@latest
+        id: all
         with:
-          path: ./test.abc
-        
-      - uses: rishabhgupta/split-by@v1
-        id: split
-        with:
-          string: "${{ steps.version.outputs.content }}"
-          split-by: '='
+          file: gradle.properties
+          all: true
 
       - name: Create Release
         id: create_release
@@ -33,7 +27,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: "312"
-          release_name: "Release ${{ steps.split.outputs._1}}"
+          tag_name: "${{ steps.all.outputs.version }}"
+          release_name: "Release ${{ steps.all.outputs.version }}"
           draft: false
           prerelease: false
